@@ -1,0 +1,44 @@
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="estilo.css">
+  <script type="text/javascript">
+
+    onload = inicia;
+
+    function inicia() {
+      var lista_divs = document.querySelectorAll("td");
+      for (var i = 0; i < lista_divs.length; i++) {
+        lista_divs[i].addEventListener('click', ocultaMuestra);
+      }
+    }
+
+    function ocultaMuestra(evento) {
+      //target, es el elemento tocado
+      //currentTarget, es el elemento contenedor
+      var img_tocado = evento.currentTarget.firstElementChild;
+      var estilo = img_tocado.style.visibility;
+      if (estilo == 'visible' || estilo == '') {
+        img_tocado.style.visibility = 'hidden';
+      }
+      else {
+        img_tocado.style.visibility = 'visible';
+      }
+    }
+
+  </script>
+</head>
+
+<body>
+  <table>
+    <tr>
+      <td><img src=""></td>
+      <td><img src=""></td>
+    </tr>
+    <tr>
+      <td><img src=""></td>
+      <td><img src=""></td>
+    </tr>
+  </table>
+</body>
+</html>
